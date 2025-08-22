@@ -19,6 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
         comments.push(comment);
         renderComments();
     }
+
+    // Función para eliminar un comentario
+    function deleteComment(id) {
+        comments = comments.filter(comment => comment.id !== id);
+        renderComments();
+    }
     
     // Función para renderizar los comentarios
     function renderComments() {
@@ -42,8 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const commentText = document.createElement('p');
             commentText.classList.add('comment-text');
             commentText.textContent = comment.text;
+
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-btn');
+            deleteButton.textContent = 'Eliminar';
+            deleteButton.addEventListener('click', () => deleteComment(comment.id));
             
             commentElement.appendChild(commentText);
+            commentElement.appendChild(deleteButton);
             
             commentsContainer.appendChild(commentElement);
         });
