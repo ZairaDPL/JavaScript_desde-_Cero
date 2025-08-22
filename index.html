@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caja de comentarios</title>
+
 </head>
 <body>
-   <h1>Ya funciona</h1> 
+   <div class="container">
+        <h1>Caja de Comentarios</h1>
+        
+        <div class="comment-form">
+            <form id="commentForm">
+                <textarea id="commentInput" placeholder="Escribe tu comentario aquí..." required></textarea>
+                <button type="submit">Agregar Comentario</button>
+            </form>
+        </div>
+        
+        <div class="comments-container" id="commentsContainer">
+            <p class="no-comments" id="noComments">No hay comentarios aún. ¡Sé el primero en comentar!</p>
+        </div>
+    </div> 
 </body>
 </html>
